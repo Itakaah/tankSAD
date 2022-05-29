@@ -43,7 +43,7 @@ void loop() {
     for (i = 0; i < 4; i++) { // on envoi un packet a la fois donc on envoi toutes les données nécessaires en 4 temps
 
   LoRa.beginPacket();
-  LoRa.print(i);
+  LoRa.print(i); // on precede la valeur par un chiffre indiquant a quelle valeur elle correspond
   LoRa.print(value[i]);
   LoRa.endPacket();
   Serial.print("sent: ");
