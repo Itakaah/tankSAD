@@ -2,9 +2,9 @@
 #include <SPI.h>
 #include <LoRa.h>
 
-#define NUM_JOY 2
-#define MIN_VAL 0
-#define MAX_VAL 1023
+#define NUM_JOY 2 // nombre de valeurs rendues sur un joystick
+#define MIN_VAL 0 // valeur minimale du joystick
+#define MAX_VAL 1023 // valeur maximale du joystick
 //Parameters
 const int joyPinX [2] = {A0, A1};
 const int joyPinY [2] = {A2, A3};
@@ -13,7 +13,7 @@ const int joyOffset  = 0;
 int joyValX [NUM_JOY] = {0,0};
 int joyValY [NUM_JOY] = {0,0};
 
-int value[4] = {0,0,0,0};
+int value[4] = {0,0,0,0}; // valeurs envoyés par la manette au tank
 
 int counter = 0;
 int i = 0;
@@ -40,7 +40,7 @@ void loop() {
   Serial.println(counter);
 
   // send packet
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 4; i++) { // on envoi un packet a la fois donc on envoi toutes les données nécessaires en 4 temps
 
   LoRa.beginPacket();
   LoRa.print(i);
@@ -57,8 +57,7 @@ void loop() {
 }
 
 
-void readJoystick( ) { /* function readJoystick */
-  ////Test routine for Joystick
+void readJoystick( ) { //lis la valur des joystick et les rangent dans leur place respectives
   for (int i = 0; i < NUM_JOY; i++) {
     joyValX[i] = analogRead(joyPinX[i]);
     joyValY[i] = analogRead(joyPinY[i]);
