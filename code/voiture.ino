@@ -5,7 +5,7 @@ int directionPin_M2 = 7;     //M1 Direction Control
 
 int car_speed = 100;
 
-char Mymessage[10]; 
+char Mymessage[10]; // variable ou sera stocké le message reçu
 
 void setup() {
   Serial.begin(9600);
@@ -18,7 +18,7 @@ void loop() {
     delay(1000);
 }
 
-void interpretMessage(char * msg)
+void interpretMessage(char * msg)// interprete le message reçu 
 {
   if (msg == "advance"){carAdvance(car_speed, car_speed);}
   else if (msg == "back"){carBack(car_speed, car_speed);}
