@@ -76,7 +76,7 @@ void loop() {
       Serial.println("message for wheels");
       if (LoRaDataNew[0] == '2'){wheelVal[0] = buffer;}
       else {wheelVal[1] = buffer;}
-      Serial.write(setWheels(wheelVal[0],wheelVal[1]),5);
+      Serial.write(setWheels(wheelVal[0],wheelVal[1]),5);// on envoi les données a la voiture
     }
     }  
   }
