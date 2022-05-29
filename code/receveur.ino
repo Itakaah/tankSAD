@@ -48,24 +48,24 @@ void loop() {
 
       //Serial.println((char)LoRa.read());
       LoRaData = LoRa.readString();
-      LoRaDataNew = LoRaData.c_str();
+      LoRaDataNew = LoRaData.c_str(); // on convertis le String en char *
       const size_t len = strlen(LoRaDataNew);
       char buffer[len + 1];
       String buffer_s;
       //Serial.println(LoRaDataNew);
-      slice_str(LoRaDataNew, buffer,starti , len);
+      slice_str(LoRaDataNew, buffer,starti , len); // on coupe le premier chiffre du contenu reçu car il indique seulement ce a quoi la valeur correspond
       //Serial.print(buffer);
       // print RSSI of packet
       //Serial.print("' with RSSI ");
       //Serial.println(LoRa.packetRssi());
       
        
-    int d = atoi(buffer);      //convert String to Int
+    int d = atoi(buffer);      //convertis char * en INT
     Serial.print("Int Value = ");
     Serial.println(d);
     Serial.println("");
     Serial.println(LoRaDataNew[0]);
-    if (LoRaDataNew[0] == '0' or LoRaDataNew[0] == '1') 
+    if (LoRaDataNew[0] == '0' or LoRaDataNew[0] == '1') // en utilisant les chiffre devant le contenu reçu on definit si la valeur est destiné aux roues ou aux servos
       {
         Serial.println("message for servo motors");
         setJoyVal(d,LoRaDataNew[0]);
@@ -82,7 +82,7 @@ void loop() {
   }
 }
 
-char * setWheels(int x, int y)
+char * setWheels(int x, int y) // renvoi un char * en fonction de quelle action la voiture doit faire
 {
   if (y > 600){return "right";}
   else if (y < 400){return "right";}
@@ -92,7 +92,7 @@ char * setWheels(int x, int y)
 }
 
 
-void slice_str(const char * str, char * buffer, size_t start, size_t end)
+void slice_str(const char * str, char * buffer, size_t start, size_t end) //slice un char * 
 {
     size_t j = 0;
     for ( size_t i = start; i <= end; ++i ) {
@@ -101,14 +101,14 @@ void slice_str(const char * str, char * buffer, size_t start, size_t end)
     buffer[j] = 0;
 }
 
-void setJoyVal(int buff, int servo)
+void setJoyVal(int buff, int servo) // donne la valeur aux joysticks fictifs 
   {
     joyVal[servo] = buff;    
       
   }
 
 
-void setServoVal()//takes joystick value and gives value to servo motor
+void setServoVal()//prends les valeurs des joysticks fictifs et modifie la valeur des servos
   {
     if (joyVal[0] > 530)
       {
