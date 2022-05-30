@@ -11,6 +11,15 @@ Dans ce projet, nous avons décidé de créer un tank télécommandé.
 
 Matériel utilisé :
 
-![Schema materiel tank](url "/tankSAD/images/schéma-materiel.png")
+- 2 servo moteur : pour contrôler la rotation de la tourelle supérieure et du canon
+- 2 joystick : pour contrôler les mouvements du tank avec la manette
+- 1 bouton : pour faire en sorte que le tank tire
+- châssis de la voiture (fournis par l'université) : structure principale du tank sur laquelle on assemble les composants
+- 2 cartes arduino : pour faire la liaison entre les données envoyés par la manette et les données reçus par le tank
 
+Projet fini :
+
+  Le projet fini s'apparente plus à une voiture qu'à un tank. La structure avance, tourne et la tourelle tourne aussi avec le canon grâce aux cerveaux
+  moteur. Malheuresement, nous n'avons pas pu faire en sorte que le tank tire un projectile malgré avoir essayer plusieurs méthodes (essayer de reproduire
+  le mécanisme d'un NERF, essayer avec un pistolet à bille)
 
