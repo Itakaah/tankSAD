@@ -1,5 +1,6 @@
 # tankSAD
-Repository GitHub créé pour le projet d'éléctronique communications sans fils en L1.
+Ce projet est réalisé dans le cadre du module Communication Sans Fil en Licence 1 à l’Université
+Nice Sophia Antipolis
 
 Participants :
 - USMANOV A.
