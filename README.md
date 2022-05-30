@@ -11,6 +11,6 @@ Dans ce projet, nous avons décidé de créer un tank télécommandé.
 
 Matériel utilisé :
 
-![Schema materiel tank](url "images/schéma-materiel")
+![Schema materiel tank](url "images/schéma-materiel.png")
 
 
