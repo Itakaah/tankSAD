@@ -19,7 +19,7 @@ Matériel utilisé :
 
 Projet fini :
 
-  Le projet fini s'apparente plus à une voiture qu'à un tank. La structure avance, tourne et la tourelle tourne aussi avec le canon grâce aux cerveaux
+  Le projet fini s'apparente plus à une voiture qu'à un tank. La structure avance, tourne et la tourelle tourne aussi avec le canon grâce aux servos
   moteur. Malheuresement, nous n'avons pas pu faire en sorte que le tank tire un projectile malgré avoir essayer plusieurs méthodes (essayer de reproduire
   le mécanisme d'un NERF, essayer avec un pistolet à bille)
 
